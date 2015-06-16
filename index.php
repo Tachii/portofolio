@@ -75,7 +75,7 @@
 
 		<footer>
 			<p>
-				Copyright &copy; 2014, All Rights Reserved
+				Copyright &copy; 2015 GZ, All Rights Reserved
 			</p>
 		</footer>
 	</body>
