@@ -15,13 +15,48 @@ $(document).ready(function() {
 			$('ul#gallery li:hidden').fadeIn('slow').removeClass('hidden');
 		} else {
 			$('ul#gallery li').each(function() {
-				if (!$(this).hasClass('category')) {
+				if (!$(this).hasClass(category)) {
 					$(this).hide().addClass('hidden');
 				} else {
 					$(this).fadeIn('slow').removeClass('hidden');
 				}
 			});
 		}
+		return false;
+	});
+
+	//Imnage Overlay onMouseOver
+
+	$('ul#gallery li').on('mouseenter', function() {
+		//Get data attribute values
+		var title = $(this).data('title');
+		var desc = $(this).data('desc');
+
+		//Validation
+		if (desc == null) {
+			desc = "Click To Enlarge";
+		}
+
+		if (title == null) {
+			title = '';
+		}
+
+		//Crelay Overlay Div
+		$(this).append('<div class="overlay"></div>');
+
+		//Get Overlay Div
+		var overlay = $(this).children('.overlay');
+
+		//Add Html to overlay
+		overlay.html('<h3>' + title + '</h3><p>' + desc + '</p>');
+
+		overlay.fadeIn('slow');
 
 	});
+
+	$('ul#gallery li').on('mouseleave', function() {
+		var overlay = $(this).children('.overlay');
+		overlay.fadeOut('slow');
+	});
+
 });
