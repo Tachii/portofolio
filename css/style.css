@@ -121,7 +121,36 @@ footer {
 	pointer-events: none;
 }
 
-.overlay h3{
-	padding:0;
-	margin:0;
+.overlay h3 {
+	padding: 0;
+	margin: 0;
+}
+
+@media (max-width: 768) {
+	.logo, nav {
+		float: none;
+		width: 100%;
+		text-align: center;
+	}
+
+	nav ul, nav li {
+		float: none;
+		padding: 0;
+	}
+
+	nav li {
+		margin-bottom: 15px;
+	}
+
+	#gallery li {
+		width: 48%;
+		margin-right: 8px;
+	}
+}
+
+@media (max-width: 568px) {
+	#gallery li {
+		width: 100%;
+		margin-right: 0;
+	}
 }
